@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>Akshit Aggarwal.</title>
 
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -11,9 +11,12 @@
     </head>
     <body>
         <div class="page-header">
-            <h1><a href="/">Django Girls Blog</a></h1>
+            {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+            <h1><a href="/">Akshit Aggarwal.</a></h1>
         </div>
-        <div class="content container">
+        <div class="content container"> 
             <div class="row">
                 <div class="col-md-8">
                 {% block content %}
@@ -21,5 +24,16 @@
                 </div>
             </div>
         </div>
+        <footer>
+            <div class="social-nav">
+                <div class="disclaimer">Copyright © 2019-2020 Akshit Aggarwal</div>
+                <ul class="socials">
+                <li><a class="facebook" target="_blank" href="https://www.facebook.com/akshitx10/"></a></li>
+                <li><a class="twitter" target="_blank" href="https://twitter.com/_akshitaggarwal"></a></li>
+                <li><a class="github" target="_blank" href="https://github.com/AkshitAggarwal"></a></li>
+                <li><a class="linkedin" target="_blank" href="https://www.linkedin.com/in/akshitx10/"></a></li>
+                </ul>
+            </div>
+        </footer>
     </body>
 </html>
